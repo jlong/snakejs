@@ -1,0 +1,15 @@
+{
+  "name": "snake.js",
+  "description": "The lightweight querySelector and events library perfectly suited for widgets and simple applications or websites.",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-qunit": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-concat": "*"
+  }
+}
