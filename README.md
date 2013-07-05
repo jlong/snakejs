@@ -8,7 +8,7 @@ Browser support: IE8+ and other modern browsers (Chrome, Safari, Firefox).
 Originally created by UserVoice for our widget framework (http://uservoice.com). Later extracted into a library by John W. Long (@johnwlong).
 
 
-## Snake function
+## Snake function and friends
 
 The $ function (aka snake function) can be used as a cross-browser querySelector(). Compared to jQuery the functionality it supports is quite limited, but it works well for some applications.
 
@@ -25,18 +25,42 @@ It can also be invoked on an element to find child elements:
     $(el, 'classname')        // Find a div inside of el
     $(el, 'article', 'post')  // Find an article tag with a class of 'post' inside of el
 
-
-## $.all
-
 The $.all function is similar to the $ function except that much like querySelectorAll() it returns an array of matching elements. In the event that no elements are found an empty array is returned.
 
 The $.all function supports the same parameters as the $ function:
 
-    $$('post')               // All divs with a class name of 'post'
-    $$(el, 'post')           // All 'post' divs inside of el
+    $.all('post')               // All divs with a class name of 'post'
+    $.all(el, 'post')           // All 'post' divs inside of el
 
-    $$('a', 'external')      // All links with a class name of 'external'
-    $$(el, 'a', 'external')  // All 'external' links inside of el
+    $.all('a', 'external')      // All links with a class name of 'external'
+    $.all(el, 'a', 'external')  // All 'external' links inside of el
+
+
+## Events
+
+Use the $.on function to add an event listener to an element. For example:
+
+    $.on(el, 'click', function(e) {
+      console.log('clicked');
+    });
+
+Use the $.off function to remove an event listener from an element:
+
+    var listener = function() { ... };
+    $.on(el, 'click', listener);
+    $.off(el, 'click', listener);
+
+Use the $.one to add an event listener that will be removed the first time it is invoked:
+
+    $.one(el, 'mousemove', function(e) {
+      console.log('This should only ever be logged one time.');
+    });
+
+Use the $.ready function to add a DOM ready event listener. This listener will be fired when the DOM has been fully loaded.
+
+    $.ready(function() {
+      console.log('The DOM is loaded!');
+    });
 
 
 ## MIT License

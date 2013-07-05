@@ -62,11 +62,11 @@
   //
   // The $.all function supports the same parameters as the $ function:
   //
-  //     $$('post')               // All divs with a class name of 'post'
-  //     $$(el, 'post')           // All 'post' divs inside of el
+  //     $.all('post')               // All divs with a class name of 'post'
+  //     $.all(el, 'post')           // All 'post' divs inside of el
   //
-  //     $$('a', 'external')      // All links with a class name of 'external'
-  //     $$(el, 'a', 'external')  // All 'external' links inside of el
+  //     $.all('a', 'external')      // All links with a class name of 'external'
+  //     $.all(el, 'a', 'external')  // All 'external' links inside of el
   //
   $.all = function() {
     var args = qargs(arguments)
