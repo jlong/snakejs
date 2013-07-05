@@ -24,16 +24,16 @@
   //
   // In its simplest form it only looks up divs by a class name:
   //
-  //     $('content')             // Find a div with a class of 'content'
+  //     $('content')                // Find a div with a class of 'content'
   //
   // But you can also pass a specific tag to find other types of tags:
   //
-  //     $('a', 'external')      // Find a link with a class of 'external'
+  //     $('a', 'external')          // Find a link with a class of 'external'
   //
   // It can also be invoked on an element to find child elements:
   //
-  //     $(el, 'classname')        // Find a div inside of el
-  //     $(el, 'article', 'post')  // Find an article tag with a class of 'post' inside of el
+  //     $(el, 'post')               // Find a div with a class of 'post' inside of el
+  //     $(el, 'article', 'post')    // Find an article tag with a class of 'post' inside of el
   //
   var $ = function() {
     var args = qargs(arguments)
