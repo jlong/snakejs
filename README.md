@@ -14,7 +14,7 @@ The $ function (aka snake function) can be used as a cross-browser querySelector
 
 In its simplest form it only looks up divs by a class name:
 
-    $('content')             // Find a div with a class of 'content'
+    $('content')                // Find a div with a class of 'content'
 
 But you can also pass a specific tag to find other types of tags:
 
