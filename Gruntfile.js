@@ -12,8 +12,8 @@ module.exports = function(grunt) {
 //\n\
 // Browser support: IE8+ and other modern browsers (Chrome, Safari, Firefox).\n\
 //\n\
-// Originally created by UserVoice for our widget framework (http://uservoice.com)\n\
-// and extracted into a library by John W. Long (@johnwlong).\n\
+// Originally created by UserVoice for our widget framework (http://uservoice.com).\n\
+// Later extracted into a library by John W. Long (@johnwlong).\n\
 //\n\
 // ---\n\
 //\n\

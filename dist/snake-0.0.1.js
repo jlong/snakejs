@@ -6,8 +6,8 @@
 //
 // Browser support: IE8+ and other modern browsers (Chrome, Safari, Firefox).
 //
-// Originally created by UserVoice for our widget framework (http://uservoice.com)
-// and extracted into a library by John W. Long (@johnwlong).
+// Originally created by UserVoice for our widget framework (http://uservoice.com).
+// Later extracted into a library by John W. Long (@johnwlong).
 //
 // ---
 //
