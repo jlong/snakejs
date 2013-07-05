@@ -1,5 +1,5 @@
 //
-// snake.js v0.0.1 (05-07-2013)
+// snake.js v0.0.1 (07-05-2013)
 //
 // The lightweight querySelector and events library perfectly suited for widgets
 // and simple applications or websites.
@@ -96,11 +96,11 @@
   //
   // The $.all function supports the same parameters as the $ function:
   //
-  //     $$('post')               // All divs with a class name of 'post'
-  //     $$(el, 'post')           // All 'post' divs inside of el
+  //     $.all('post')               // All divs with a class name of 'post'
+  //     $.all(el, 'post')           // All 'post' divs inside of el
   //
-  //     $$('a', 'external')      // All links with a class name of 'external'
-  //     $$(el, 'a', 'external')  // All 'external' links inside of el
+  //     $.all('a', 'external')      // All links with a class name of 'external'
+  //     $.all(el, 'a', 'external')  // All 'external' links inside of el
   //
   $.all = function() {
     var args = qargs(arguments)

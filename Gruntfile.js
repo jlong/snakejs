@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     concat: {
       options: {
         banner: "//\n\
-// <%= pkg.name %> v<%= pkg.version %> (<%= grunt.template.today('dd-mm-yyyy') %>)\n\
+// <%= pkg.name %> v<%= pkg.version %> (<%= grunt.template.today('mm-dd-yyyy') %>)\n\
 //\n\
 // The lightweight querySelector and events library perfectly suited for widgets\n\
 // and simple applications or websites.\n\
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> v<%= pkg.version %> (<%= grunt.template.today("dd-mm-yyyy") %>) */\n'
+        banner: '/*! <%= pkg.name %> v<%= pkg.version %> (<%= grunt.template.today("mm-dd-yyyy") %>) */\n'
       },
       dist: {
         files: {
