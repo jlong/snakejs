@@ -3,10 +3,10 @@
   function qargs(args) {
     var el, tagName, className;
     if (args.length === 1) {
-      el = document; tagName = 'div'; className = arguments[0];
+      el = document; tagName = 'div'; className = args[0];
     } else if (args.length === 2) {
       if (typeof args[0] === 'string') {
-        el = document; tagName = args[0]; className = arguments[1];
+        el = document; tagName = args[0]; className = args[1];
       } else {
         el = args[0]; tagName = 'div'; className = args[1];
       }
@@ -45,11 +45,12 @@
       return el.querySelector(tagName + '.' + className);
     } else {
       var els = el.getElementsByTagName(tagName)
-      ,   regexp = new RegExp('\b' + className + '\b', 'gmi')
+      ,   regexp = new RegExp("\\b" + className + "\\b", 'gmi')
       ;
       for (var i=0; i < els.length; i++) {
         if (regexp.test(els[i].className)) {
-          return els[i];
+          var element = els[i];
+          return element;
         }
       }
       return null;
@@ -74,11 +75,12 @@
     ,   tagName = args[1]
     ,   className = args[2]
     ;
+    console.log(el, tagName, className);
     if (el === document && el.querySelectorAll) {
       return el.querySelectorAll(tagName + '.' + className);
     } else {
       var els = el.getElementsByTagName(tagName)
-      ,   regexp = new RegExp('\b' + className + '\b', 'gmi')
+      ,   regexp = new RegExp("\\b" + className + "\\b", 'gmi')
       ,   result = []
       ;
       for (var i=0; i < els.length; i++) {
@@ -126,13 +128,13 @@
 
   // Add a class to el.
   $.addClass = function(el, name) {
-    if ((new RegExp("\b" + name + "\b")).test(el.className)) return;
+    if ((new RegExp("\\b" + name + "\\b")).test(el.className)) return;
     el.className += (el.className ? ' ' : '') + name;
   };
 
   // Remove a class from el.
   $.removeClass = function(el, name) {
-    el.className = el.className.replace(new RegExp("\b" + name + "\b", "g"), ' ');
+    el.className = el.className.replace(new RegExp("\\b" + name + "\\b", "g"), ' ');
   };
 
   // Does el have class?
