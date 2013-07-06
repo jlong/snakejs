@@ -2,6 +2,11 @@
   "name": "snake.js",
   "description": "The lightweight querySelector and events library perfectly suited for widgets and simple applications or websites.",
   "version": "0.0.1",
+  "license": "MIT License",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlong/snakejs.git",
+  },
   "private": true,
   "dependencies": {},
   "devDependencies": {
