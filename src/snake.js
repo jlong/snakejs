@@ -75,7 +75,6 @@
     ,   tagName = args[1]
     ,   className = args[2]
     ;
-    console.log(el, tagName, className);
     if (el === document && el.querySelectorAll) {
       return el.querySelectorAll(tagName + '.' + className);
     } else {
