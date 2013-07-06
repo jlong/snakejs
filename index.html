@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Snake.js : The lightweight querySelector and events library perfectly suited for widgets and simple applications or websites. Supports IE8+" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Snake.js</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jlong/snakejs">View on GitHub</a>
+
+          <h1 id="project_title">Snake.js</h1>
+          <h2 id="project_tagline">The lightweight querySelector and events library perfectly suited for widgets and simple applications or websites. Supports IE8+</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jlong/snakejs/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jlong/snakejs/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a name="snake-function-and-friends" class="anchor" href="#snake-function-and-friends"><span class="octicon octicon-link"></span></a>Snake function and friends</h2>
+
+<p>The $ function (aka snake function) can be used as a cross-browser querySelector(). Compared to jQuery the functionality it supports is quite limited, but it works well for some applications.</p>
+
+<p>In its simplest form it only looks up divs by a class name:</p>
+
+<pre><code>$('content')                // Find a div with a class of 'content'
+</code></pre>
+
+<p>But you can also pass a specific tag to find other types of tags:</p>
+
+<pre><code>$('a', 'external')          // Find a link with a class of 'external'
+</code></pre>
+
+<p>It can also be invoked on an element to find child elements:</p>
+
+<pre><code>$(el, 'post')               // Find a div with a class of 'post' inside of el
+$(el, 'article', 'post')    // Find an article tag with a class of 'post' inside of el
+</code></pre>
+
+<p>The $.all function is similar to the $ function except that much like querySelectorAll() it returns an array of matching elements. In the event that no elements are found an empty array is returned.</p>
+
+<p>The $.all function supports the same parameters as the $ function:</p>
+
+<pre><code>$.all('post')               // All divs with a class name of 'post'
+$.all(el, 'post')           // All 'post' divs inside of el
+
+$.all('a', 'external')      // All links with a class name of 'external'
+$.all(el, 'a', 'external')  // All 'external' links inside of el
+</code></pre>
+
+<h2>
+<a name="events" class="anchor" href="#events"><span class="octicon octicon-link"></span></a>Events</h2>
+
+<p>Use the $.on function to add an event listener to an element. For example:</p>
+
+<pre><code>$.on(el, 'click', function(e) {
+  console.log('clicked');
+});
+</code></pre>
+
+<p>Use the $.off function to remove an event listener from an element:</p>
+
+<pre><code>var listener = function() { ... };
+$.on(el, 'click', listener);
+$.off(el, 'click', listener);
+</code></pre>
+
+<p>Use the $.one to add an event listener that will be removed the first time it is invoked:</p>
+
+<pre><code>$.one(el, 'mousemove', function(e) {
+  console.log('This should only ever be logged one time.');
+});
+</code></pre>
+
+<p>Use the $.ready function to add a DOM ready event listener. This listener will be fired when the DOM has been fully loaded.</p>
+
+<pre><code>$.ready(function() {
+  console.log('The DOM is loaded!');
+});
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Snake.js maintained by <a href="https://github.com/jlong">jlong</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
