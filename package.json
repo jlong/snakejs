@@ -5,7 +5,7 @@
   "license": "MIT License",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlong/snakejs.git",
+    "url": "https://github.com/jlong/snakejs.git"
   },
   "private": true,
   "dependencies": {},
@@ -15,6 +15,7 @@
     "grunt-contrib-jshint": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-concat": "*",
-    "grunt-mocha": "*"
+    "grunt-mocha": "*",
+    "phantomjs": "*"
   }
 }
