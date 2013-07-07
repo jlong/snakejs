@@ -1,5 +1,3 @@
-var assert = chai.assert;
-
 suite('$');
 
 test("$('content')", function(){

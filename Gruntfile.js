@@ -56,7 +56,7 @@ module.exports = function(grunt) {
       }
     },
     mocha: {
-      files: ['test/**/*_test.html']
+      all: ['test/**/*_test.html']
     },
     jshint: {
       files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],

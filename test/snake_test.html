@@ -10,12 +10,17 @@
       <h1>Snake.js</h1>
     </div>
     <script src="../libs/mocha.js"></script>
+    <script src="../libs/phantomjs/bridge.js"></script>
     <script src="../libs/chai.js"></script>
+    <script>var assert = chai.assert;</script>
     <script>mocha.setup('qunit')</script>
+
     <script src="../src/snake.js"></script>
     <script src="snake_test.js"></script>
+
     <script>
     mocha.checkLeaks();
+    mocha.globals('$', 'Snake');
     mocha.run();
     </script>
 
