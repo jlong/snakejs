@@ -166,8 +166,8 @@
 
   // Use the $.hasClass function to test if an element has a class:
   //
-  //     if ($.hasClass(el, 'is-highlighted') {
-  //       // el is highlighted
+  //     if ($.hasClass(el, 'is-hidden') {
+  //       // el is hidden
   //     }
   //
   $.hasClass = function(el, name) {
