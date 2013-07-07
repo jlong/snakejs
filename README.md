@@ -60,6 +60,20 @@ To retrieve data for an element, simply pass in the key:
 
     $.data(el, 'tooltip'); // => "An example tooltip."
 
+Use the $.addClass function to add a class to an element:
+
+    $.addClass(el, 'is-hidden');
+
+Use the $.removeClass function to remove a class from an element:
+
+    $.removeClass(el, 'is-hidden');
+
+Use the $.hasClass function to test if an element has a class:
+
+    if ($.hasClass(el, 'is-highlighted') {
+       // el is highlighted
+    }
+
 
 ## Events
 

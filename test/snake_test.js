@@ -82,7 +82,7 @@ test("Storing and retrieving arbitrary data", function() {
   assert.equal($.data(el, 'tooltip'), 'An example tooltip.');
 });
 
-test("Data is maintined even when an element is recreated", function() {
+test("Data is maintained even when an element is recreated", function() {
   var el = document.createElement('button');
   el.id = 'toolbar-button';
   $.data(el, 'tooltip', 'An example tooltip.');
@@ -90,4 +90,39 @@ test("Data is maintined even when an element is recreated", function() {
   el = document.createElement('button');
   el.id = 'toolbar-button';
   assert.equal($.data(el, 'tooltip'), 'An example tooltip.');
+});
+
+
+suite('$.addClass');
+
+test("Can add a class to an element", function() {
+  var el = document.createElement('div');
+  el.className = 'panel';
+  $.addClass(el, 'is-hidden');
+  assert.equal(el.className, 'panel is-hidden');
+});
+
+
+suite('$.removeClass');
+
+test("Can remove a class from an element", function() {
+  var el = document.createElement('div');
+  el.className = 'panel is-hidden';
+  $.removeClass(el, 'is-hidden');
+  assert.equal(el.className, 'panel ');
+});
+
+
+suite('$.hasClass');
+
+test("Tests true when an element has specified class", function() {
+  var el = document.createElement('div');
+  el.className = 'panel is-hidden';
+  assert.isTrue($.hasClass(el, 'is-hidden'));
+});
+
+test("Tests false when an element dose not have specified class", function() {
+  var el = document.createElement('div');
+  el.className = 'panel';
+  assert.isFalse($.hasClass(el, 'is-hidden'));
 });
