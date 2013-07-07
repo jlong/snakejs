@@ -8,7 +8,7 @@ Browser support: IE8+ and other modern browsers (Chrome, Safari, Firefox).
 Originally created by UserVoice for our widget framework (http://uservoice.com). Later extracted into a library by John W. Long (@johnwlong).
 
 
-## Snake function and friends
+### Selecting elements
 
 The $ function (aka snake function) can be used as a cross-browser querySelector(). Compared to jQuery the functionality it supports is quite limited, but it works well for some applications.
 
@@ -36,7 +36,7 @@ The $.all function supports the same parameters as the $ function:
     $.all(el, 'a', 'external')  // All 'external' links inside of el
 
 
-## Elements
+### Retreiving IDs
 
 The $.identify function can be used to obtain an ID for a given element:
 
@@ -50,6 +50,8 @@ If the element doesn't have an ID, One will be generated for it. For instance:
     $.identify(el);   // => 'snakejs-1'
 
 
+### Storing data
+
 The $.data function can be used to associate and retrieve artitrary data with an element. The data is stored in a global object and associated by the ID of the element. If the element does not have an ID, the $.identify function is used to ensure that it does.
 
 To store data for an element, pass in a key and value:
@@ -59,6 +61,9 @@ To store data for an element, pass in a key and value:
 To retrieve data for an element, simply pass in the key:
 
     $.data(el, 'tooltip'); // => "An example tooltip."
+
+
+### Adding, removing, and testing classes
 
 Use the $.addClass function to add a class to an element:
 
@@ -75,7 +80,7 @@ Use the $.hasClass function to test if an element has a class:
     }
 
 
-## Events
+### Adding and removing Events
 
 Use the $.on function to add an event listener to an element. For example:
 
@@ -95,6 +100,9 @@ Use the $.one to add an event listener that will be removed the first time it is
       console.log('This should only ever be logged one time.');
     });
 
+
+### DOM ready
+
 Use the $.ready function to add a DOM ready event listener. This listener will be fired when the DOM has been fully loaded.
 
     $.ready(function() {
@@ -102,7 +110,7 @@ Use the $.ready function to add a DOM ready event listener. This listener will b
     });
 
 
-## MIT License
+### MIT License
 
 Copyright (c) 2013 John W. Long. Portions contributed by Austin Taylor, Jonathan Novak, and Mark Martin.
 
