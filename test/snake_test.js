@@ -71,3 +71,23 @@ test("Returns and sets a new ID on an element without one", function() {
   assert.equal($.identify(el), 'snakejs-1');
   assert.equal($.identify(el), 'snakejs-1');
 });
+
+
+suite('$.data');
+
+test("Storing and retrieving arbitrary data", function() {
+  var el = document.createElement('button');
+  el.id = 'toolbar-button';
+  $.data(el, 'tooltip', 'An example tooltip.');
+  assert.equal($.data(el, 'tooltip'), 'An example tooltip.');
+});
+
+test("Data is maintined even when an element is recreated", function() {
+  var el = document.createElement('button');
+  el.id = 'toolbar-button';
+  $.data(el, 'tooltip', 'An example tooltip.');
+
+  el = document.createElement('button');
+  el.id = 'toolbar-button';
+  assert.equal($.data(el, 'tooltip'), 'An example tooltip.');
+});
