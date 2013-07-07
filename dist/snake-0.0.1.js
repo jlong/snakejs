@@ -1,5 +1,5 @@
 //
-// snake.js v0.0.1 (07-06-2013)
+// snake.js v0.0.1 (07-07-2013)
 //
 // The lightweight querySelector and events library perfectly suited for widgets
 // and simple applications or websites.
@@ -131,7 +131,17 @@
     return 'snakejs-' + uniqIdCount;
   }
 
-  // Return an ID for el. Create one if needed.
+  // The $.identify function can be used to obtain an ID for a given element:
+  //
+  //     var el = document.createElement('div');
+  //     el.id = 'main';
+  //     $.identify(el);   // => 'main'
+  //
+  // If the element doesn't have an ID, One will be generated for it. For instance:
+  //
+  //     var el = document.createElement('div');
+  //     $.identify(el);   // => 'snakejs-1'
+  //
   $.identify = function(el) {
     var id = el.getAttribute('id');
     if (id) {
@@ -143,7 +153,19 @@
     }
   };
 
-  // Associate arbitrary data with el.
+  // The $.data function can be used to associate and retrieve arbitrary data with
+  // an element. The data is stored in a global object and associated by the ID
+  // of the element. If the element does not have an ID, the $.identify function
+  // is used to ensure that it does.
+  //
+  // To store data for an element, pass in a key and value:
+  //
+  //     $.data(el, 'tooltip', 'An example tooltip.');
+  //
+  // To retrieve data for an element, simply pass in the key:
+  //
+  //     $.data(el, 'tooltip'); // => "An example tooltip."
+  //
   $.data = (function() {
     var d = {};
     function data(el, key, value) {
@@ -159,23 +181,38 @@
     return data;
   })();
 
-  // Add a class to el.
+  // Use the $.addClass function to add a class to an element:
+  //
+  //     $.addClass(el, 'is-hidden');
+  //
   $.addClass = function(el, name) {
     if ((new RegExp("\\b" + name + "\\b")).test(el.className)) return;
     el.className += (el.className ? ' ' : '') + name;
   };
 
-  // Remove a class from el.
+  // Use the $.addClass function to remove a class from an element:
+  //
+  //     $.removeClass(el, 'is-hidden');
+  //
   $.removeClass = function(el, name) {
-    el.className = el.className.replace(new RegExp("\\b" + name + "\\b", "g"), ' ');
+    el.className = el.className.replace(new RegExp("\\b" + name + "\\b", "g"), '');
   };
 
-  // Does el have class?
+  // Use the $.hasClass function to test if an element has a class:
+  //
+  //     if ($.hasClass(el, 'is-hidden') {
+  //       // el is hidden
+  //     }
+  //
   $.hasClass = function(el, name) {
     return el.className.indexOf(name) > -1;
   };
 
-  // Get the width and height of el.
+  // Use the $.dimensions function to retreive the width and height of an element.
+  // This function should work even if the element is invisible. Just call:
+  //
+  //     $.dimensions(el)  // => { width: 200, height: 100 }
+  //
   $.dimensions = function(el) {
     var d = el.display;
     if (d !== 'none' && d !== null) { // Safari bug
@@ -203,7 +240,11 @@
     return { width: w, height: h };
   };
 
-  // Get top and left offset of el.
+  // Use the $.offset function to get an element's coordinates relative to the
+  // entire page:
+  // 
+  //     $.offset(el)      // => { top: 10, left: 20 }
+  //
   $.offset = function(el) {
     var e = el
     ,   o = { top: 0, left: 0 }

@@ -91,7 +91,7 @@ Use the $.offset function to get an element's coordinates relative to the entire
     $.offset(el)      // => { top: 10, left: 20 }
 
 
-### Adding and removing Events
+### Adding and removing events
 
 Use the $.on function to add an event listener to an element. For example:
 
