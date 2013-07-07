@@ -1,7 +1,7 @@
 Snake.js
 --------
 
-The lightweight querySelector and events library perfectly suited for widgets and simple applications or websites.
+The micro selector, element, and events library perfectly suited for widgets and simple applications or websites.
 
 Browser support: IE8+ and other modern browsers (Chrome, Safari, Firefox).
 
