@@ -121,7 +121,7 @@ test("Tests true when an element has specified class", function() {
   assert.isTrue($.hasClass(el, 'is-hidden'));
 });
 
-test("Tests false when an element dose not have specified class", function() {
+test("Tests false when an element does not have specified class", function() {
   var el = document.createElement('div');
   el.className = 'panel';
   assert.isFalse($.hasClass(el, 'is-hidden'));
