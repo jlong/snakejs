@@ -219,8 +219,6 @@
       return { width: el.offsetWidth, height: el.offsetHeight };
     }
 
-    // All *Width and *Height properties give 0 on elements with display none,
-    // so enable the element temporarily
     var s = el.style
     ,   vis = s.visibility
     ,   pos = s.position
