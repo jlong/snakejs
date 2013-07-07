@@ -15,6 +15,7 @@
     "grunt-contrib-jshint": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-concat": "*",
+    "grunt-git-authors": "*",
     "grunt-mocha": "*",
     "phantomjs": "*"
   }
