@@ -97,7 +97,17 @@
     return 'snakejs-' + uniqIdCount;
   }
 
-  // Return an ID for el. Create one if needed.
+  // The $.identify function can be used to obtain an ID for a given element:
+  //
+  //     var el = document.createElement('div');
+  //     el.id = 'main';
+  //     $.identify(el);   // => 'main'
+  //
+  // If the element doesn't have an ID, One will be generated for it. For instance:
+  //
+  //     var el = document.createElement('div');
+  //     $.identify(el);   // => 'snakejs-1'
+  //
   $.identify = function(el) {
     var id = el.getAttribute('id');
     if (id) {

@@ -36,6 +36,20 @@ The $.all function supports the same parameters as the $ function:
     $.all(el, 'a', 'external')  // All 'external' links inside of el
 
 
+## Elements
+
+The $.identify function can be used to obtain an ID for a given element:
+
+    var el = document.createElement('div');
+    el.id = 'main';
+    $.identify(el);   // => 'main'
+
+If the element doesn't have an ID, One will be generated for it. For instance:
+
+    var el = document.createElement('div');
+    $.identify(el);   // => 'snakejs-1'
+
+
 ## Events
 
 Use the $.on function to add an event listener to an element. For example:

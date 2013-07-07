@@ -56,3 +56,18 @@ test("$.all(el, 'a', 'external')", function() {
   ;
   assert.equal(externalLinks.length, 1);
 });
+
+
+suite('$.identify');
+
+test("Returns the correct ID on an element", function() {
+  var el = document.createElement('div');
+  el.id = 'main';
+  assert.equal($.identify(el), 'main');
+});
+
+test("Returns and sets a new ID on an element without one", function() {
+  var el = document.createElement('div');
+  assert.equal($.identify(el), 'snakejs-1');
+  assert.equal($.identify(el), 'snakejs-1');
+});
