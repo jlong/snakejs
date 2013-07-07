@@ -56,7 +56,10 @@ module.exports = function(grunt) {
       }
     },
     mocha: {
-      all: ['test/**/*_test.html']
+      all: ['test/**/*_test.html'],
+      options: {
+        reporter: 'Spec'
+      }
     },
     jshint: {
       files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
