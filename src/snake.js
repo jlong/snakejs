@@ -156,7 +156,7 @@
     el.className += (el.className ? ' ' : '') + name;
   };
 
-  // Use the $.addClass function to remove a class from an element:
+  // Use the $.removeClass function to remove a class from an element:
   //
   //     $.removeClass(el, 'is-hidden');
   //
