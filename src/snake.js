@@ -174,7 +174,11 @@
     return el.className.indexOf(name) > -1;
   };
 
-  // Get the width and height of el.
+  // Use the $.dimensions function to retreive the width and height of an element.
+  // This function should work even if the element is invisible. Just call:
+  //
+  //     $.dimensions(el)  // => { width: 200, height: 100 }
+  //
   $.dimensions = function(el) {
     var d = el.display;
     if (d !== 'none' && d !== null) { // Safari bug
@@ -202,7 +206,11 @@
     return { width: w, height: h };
   };
 
-  // Get top and left offset of el.
+  // Use the $.offset function to get an element's coordinates relative to the
+  // entire page:
+  // 
+  //     $.offset(el)      // => { top: 10, left: 20 }
+  //
   $.offset = function(el) {
     var e = el
     ,   o = { top: 0, left: 0 }

@@ -80,6 +80,17 @@ Use the $.hasClass function to test if an element has a class:
     }
 
 
+### Getting dimensions and offset
+
+Use the $.dimensions function to retreive the width and height of an element. This function should work even if the element is invisible. Just call:
+
+    $.dimensions(el)  // => { width: 200, height: 100 }
+
+Use the $.offset function to get an element's coordinates relative to the entire page:
+
+    $.offset(el)      // => { top: 10, left: 20 }
+
+
 ### Adding and removing Events
 
 Use the $.on function to add an event listener to an element. For example:

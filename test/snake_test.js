@@ -126,3 +126,32 @@ test("Tests false when an element does not have specified class", function() {
   el.className = 'panel';
   assert.isFalse($.hasClass(el, 'is-hidden'));
 });
+
+
+suite('$.dimensions');
+
+test("Get the width and height of an element", function() {
+  var el = document.createElement('div');
+  el.style.width = '200px';
+  el.style.height = '100px';
+  document.body.appendChild(el);
+
+  var d = $.dimensions(el);
+  assert.equal(d.width, 200);
+  assert.equal(d.height, 100);
+});
+
+
+suite('$.offset');
+
+test('Get top,left coordinates for element', function() {
+  var el = document.createElement('div');
+  el.style.position = 'absolute';
+  el.style.top = '10px';
+  el.style.left = '20px';
+  document.body.appendChild(el);
+
+  var o = $.offset(el);
+  assert.equal(o.top, 10);
+  assert.equal(o.left, 20);
+});
