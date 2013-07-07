@@ -52,7 +52,7 @@ If the element doesn't have an ID, One will be generated for it. For instance:
 
 ### Storing data
 
-The $.data function can be used to associate and retrieve artitrary data with an element. The data is stored in a global object and associated by the ID of the element. If the element does not have an ID, the $.identify function is used to ensure that it does.
+The $.data function can be used to associate and retrieve arbitrary data with an element. The data is stored in a global object and associated by the ID of the element. If the element does not have an ID, the $.identify function is used to ensure that it does.
 
 To store data for an element, pass in a key and value:
 

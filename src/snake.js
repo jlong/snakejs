@@ -119,7 +119,7 @@
     }
   };
 
-  // The $.data function can be used to associate and retrieve artitrary data with
+  // The $.data function can be used to associate and retrieve arbitrary data with
   // an element. The data is stored in a global object and associated by the ID
   // of the element. If the element does not have an ID, the $.identify function
   // is used to ensure that it does.
