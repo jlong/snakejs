@@ -31,7 +31,10 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p>The $ function (snake function) can be used as a cross-browser querySelector(). Compared to jQuery the functionality it supports is quite limited, but it works well for some applications.</p>
+        <h3>
+<a name="selecting-elements" class="anchor" href="#selecting-elements"><span class="octicon octicon-link"></span></a>Selecting elements</h3>
+
+<p>The $ function (aka snake function) can be used as a cross-browser querySelector(). Compared to jQuery the functionality it supports is quite limited, but it works well for some applications.</p>
 
 <p>In its simplest form it only looks up divs by a class name:</p>
 
@@ -60,8 +63,72 @@ $.all('a', 'external')      // All links with a class name of 'external'
 $.all(el, 'a', 'external')  // All 'external' links inside of el
 </code></pre>
 
-<h2>
-<a name="events" class="anchor" href="#events"><span class="octicon octicon-link"></span></a>Events</h2>
+<h3>
+<a name="retreiving-ids" class="anchor" href="#retreiving-ids"><span class="octicon octicon-link"></span></a>Retreiving IDs</h3>
+
+<p>The $.identify function can be used to obtain an ID for a given element:</p>
+
+<pre><code>var el = document.createElement('div');
+el.id = 'main';
+$.identify(el);   // =&gt; 'main'
+</code></pre>
+
+<p>If the element doesn't have an ID, One will be generated for it. For instance:</p>
+
+<pre><code>var el = document.createElement('div');
+$.identify(el);   // =&gt; 'snakejs-1'
+</code></pre>
+
+<h3>
+<a name="storing-data" class="anchor" href="#storing-data"><span class="octicon octicon-link"></span></a>Storing data</h3>
+
+<p>The $.data function can be used to associate and retrieve artitrary data with an element. The data is stored in a global object and associated by the ID of the element. If the element does not have an ID, the $.identify function is used to ensure that it does.</p>
+
+<p>To store data for an element, pass in a key and value:</p>
+
+<pre><code>$.data(el, 'tooltip', 'An example tooltip.');
+</code></pre>
+
+<p>To retrieve data for an element, simply pass in the key:</p>
+
+<pre><code>$.data(el, 'tooltip'); // =&gt; "An example tooltip."
+</code></pre>
+
+<h3>
+<a name="adding-removing-and-testing-classes" class="anchor" href="#adding-removing-and-testing-classes"><span class="octicon octicon-link"></span></a>Adding, removing, and testing classes</h3>
+
+<p>Use the $.addClass function to add a class to an element:</p>
+
+<pre><code>$.addClass(el, 'is-hidden');
+</code></pre>
+
+<p>Use the $.removeClass function to remove a class from an element:</p>
+
+<pre><code>$.removeClass(el, 'is-hidden');
+</code></pre>
+
+<p>Use the $.hasClass function to test if an element has a class:</p>
+
+<pre><code>if ($.hasClass(el, 'is-hidden') {
+   // el is hidden
+}
+</code></pre>
+
+<h3>
+<a name="getting-dimensions-and-offset" class="anchor" href="#getting-dimensions-and-offset"><span class="octicon octicon-link"></span></a>Getting dimensions and offset</h3>
+
+<p>Use the $.dimensions function to retreive the width and height of an element. This function should work even if the element is invisible. Just call:</p>
+
+<pre><code>$.dimensions(el)  // =&gt; { width: 200, height: 100 }
+</code></pre>
+
+<p>Use the $.offset function to get an element's coordinates relative to the entire page:</p>
+
+<pre><code>$.offset(el)      // =&gt; { top: 10, left: 20 }
+</code></pre>
+
+<h3>
+<a name="adding-and-removing-events" class="anchor" href="#adding-and-removing-events"><span class="octicon octicon-link"></span></a>Adding and removing Events</h3>
 
 <p>Use the $.on function to add an event listener to an element. For example:</p>
 
@@ -83,6 +150,9 @@ $.off(el, 'click', listener);
   console.log('This should only ever be logged one time.');
 });
 </code></pre>
+
+<h3>
+<a name="dom-ready" class="anchor" href="#dom-ready"><span class="octicon octicon-link"></span></a>DOM ready</h3>
 
 <p>Use the $.ready function to add a DOM ready event listener. This listener will be fired when the DOM has been fully loaded.</p>
 
