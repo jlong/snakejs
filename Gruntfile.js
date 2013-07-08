@@ -38,10 +38,23 @@ module.exports = function(grunt) {
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n\
 // SOFTWARE.\n\
 //\n",
-        separator: ';'
+        separator: "\n"
       },
       dist: {
-        src: ['src/**/*.js'],
+        src: [
+          'src/prequel.js',
+          'src/query.js',
+          'src/all.js',
+          'src/identify.js',
+          'src/data.js',
+          'src/class.js',
+          'src/dimensions.js',
+          'src/offset.js',
+          'src/events.js',
+          'src/one.js',
+          'src/ready.js',
+          'src/sequel.js'
+        ],
         dest: 'dist/snake-<%= pkg.version %>.js'
       }
     },
@@ -62,7 +75,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+      files: ['Gruntfile.js', 'src/**/*.js!*equel.js', 'test/**/*.js'],
       options: {
         browser: true,
         laxcomma: true,
