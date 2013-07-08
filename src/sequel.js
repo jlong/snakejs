@@ -1,4 +1,3 @@
-
 $.noconflict = Snake.noconflict;
 window.Snake = $;
 if (!$.noconflict) { window.$ = $; }

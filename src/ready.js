@@ -2,7 +2,7 @@
 // will be fired when the DOM has been fully loaded.
 //
 //     $.ready(function() {
-//      console.log('The DOM is loaded!');
+//       console.log('The DOM is loaded!');
 //     });
 //
 $.ready = function(f) {
